@@ -1,0 +1,9 @@
+#!/bin/bash
+
+# Update Git submodules
+git submodule update --init
+
+# Install Python packages using pip
+pip install flask flask_cors bs4 lxml pelican markdown gevent
+
+# Optionally, you can add more commands or customizations here.

@@ -1,0 +1,707 @@
+<h1>About</h1>
+<p>可攜程式套件:</p>
+<p style="padding-left: 30px;"><a href="http://229.cycu.org/portable_2026.7z">portable_2026.7z</a> (387MB)</p>
+<p style="padding-left: 60px;">解開壓縮後，雙點擊 start_miniconda3.bat 啟動可攜系統，雙點擊 stop.bat 關閉可攜系統。</p>
+<p style="padding-left: 60px;">可攜系統啟動後，在命令列執行 conda activate y:\envs\cmsimde 可進入能執行 CMSiMDE 的環境。</p>
+<p style="padding-left: 60px;">若希望可攜系統啟動直接進入 cmsimde 環境，可將 start_miniconda3.bat 檔案中第 98 行: call "%CONDA_ROOT%\Scripts\activate.bat" %ENV_NAME% 更換為 call "%CONDA_ROOT%\Scripts\activate.bat" %Disk%:\envs\cmsimde</p>
+<h1>Reeborg</h1>
+<p><a href="https://mde.tw/cp2025/reeborg?lang=en&amp;mode=python&amp;menu=worlds/menus/select_collection_en.json&amp;name=Alone&amp;url=worlds/tutorial_en/harvest1.json&amp;editor=python/harvest1.py">https://mde.tw/cp2025/reeborg?lang=en&amp;mode=python&amp;menu=worlds/menus/select_collection_en.json&amp;name=Alone&amp;url=worlds/tutorial_en/harvest1.json&amp;editor=python/harvest1.py</a></p>
+<p><a href="https://mde.tw/cp2025/reeborg?lang=en&amp;mode=python&amp;menu=worlds/menus/select_collection_en.json&amp;name=Alone&amp;url=worlds/tutorial_en/harvest1.json&amp;editor=python/harvest1_east_west.py">https://mde.tw/cp2025/reeborg?lang=en&amp;mode=python&amp;menu=worlds/menus/select_collection_en.json&amp;name=Alone&amp;url=worlds/tutorial_en/harvest1.json&amp;editor=python/harvest1_east_west.py</a> </p>
+<hr/>
+<p><a href="https://mde.tw/reeborg">https://mde.tw/reeborg</a></p>
+<p><a href="https://github.com/mdecycu/cs101">https://github.com/mdecycu/cs101</a></p>
+<p><a href="https://reeborg.ca/docs/en/python/index.html">https://reeborg.ca/docs/en/python/index.html</a></p>
+<p><a href="https://aroberge.github.io/reeborg-api/">https://aroberge.github.io/reeborg-api/</a></p>
+<p>if using local static port 9442:</p>
+<p style="padding-left: 30px;"><a href="https://127.0.0.1:8442/reeborg/?lang=en&amp;mode=python&amp;menu=%2Freeborg%2Fworlds%2Fmenus%2Fselect_collection_en.json&amp;name=Alone&amp;url=%2Freeborg%2Fworlds%2Ftutorial_en%2Fharvest1.json&amp;editor=%2Freeborg%2Fpython%2Fharvest1.py">Reeborg</a></p>
+<p>For Github Pages:</p>
+<p style="padding-left: 30px;"><a href="https://mde.tw/cp2025/reeborg?lang=en&amp;mode=python&amp;menu=%2Freeborg%2Fworlds%2Fmenus%2Fselect_collection_en.json&amp;name=Alone&amp;url=%2Freeborg%2Fworlds%2Ftutorial_en%2Fharvest1.json&amp;editor=%2Freeborg%2Fpython%2Fharvest1.py">Reeborg</a></p>
+<p></p>
+<h2>ex1</h2>
+<p><a href="https://mde.tw/cp2025/reeborg?lang=en&amp;mode=python&amp;menu=worlds/menus/select_collection_en.json&amp;name=Alone&amp;url=worlds/tutorial_en/harvest1.json&amp;editor=python/harvest1.py">https://mde.tw/cp2025/reeborg?lang=en&amp;mode=python&amp;menu=worlds/menus/select_collection_en.json&amp;name=Alone&amp;url=worlds/tutorial_en/harvest1.json&amp;editor=python/harvest1.py</a> 是已知的機器人採收紅蘿蔔的程式，經由以下與 Copilot 的對話，希望透過 Python Class 的編寫解決特定範圍農作物採收的程式。</p>
+<p>問句:</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">以下是 Reeborg 一個用來採收紅蘿蔔的程式, 目前位於 (3,3) 到 (8,8) 的區域中各座標點, 各有一個紅羅蔔等待採收, 現在想要建立一個 harvest() class, 可以利用 (3,3), (8,8)作為標定有農作物必須採收的兩個區域對角點座標, 而程式可以利用此一 harvest 類別生成案例完成採收的任務: def turn(int):
+    for i in range(int):
+        turn_left()
+        
+def new_move(int):
+    for i in range(int):
+        move()
+        
+def harvest_one_row():
+    while object_here():
+        take()
+    else:
+        move()
+# move to the field
+new_move(2)
+turn_left()
+new_move(2)
+
+for i in range(3):
+    while is_facing_north():
+        for i in range(6):
+            harvest_one_row()
+        for i in range(2):
+            turn(3)
+            move() 
+    else:
+        for i in range(6):
+            harvest_one_row()
+        for i in range(2):
+            turn_left()
+            move()</pre>
+<p>AI 回答: <a href="https://mde.tw/cp2025/reeborg?lang=en&amp;mode=python&amp;menu=worlds/menus/select_collection_en.json&amp;name=Alone&amp;url=worlds/tutorial_en/harvest1.json&amp;editor=python/harvest1_class_ex1.py">https://mde.tw/cp2025/reeborg?lang=en&amp;mode=python&amp;menu=worlds/menus/select_collection_en.json&amp;name=Alone&amp;url=worlds/tutorial_en/harvest1.json&amp;editor=python/harvest1_class_ex1.py</a> </p>
+<p>進一步要求:</p>
+<pre class="brush:js;auto-links:false;toolbar:false" contenteditable="false">請在類別中加上一個採收方向的參數, 內建變數是 horizontal 採收, 也就是由西邊往東邊的水平方向進行採收, 但若該方向變數設為 vertical 則會由南邊往北的所謂垂直方向進行採收</pre>
+<p>AI 回應: <a href="https://mde.tw/cp2025/reeborg?lang=en&amp;mode=python&amp;menu=worlds/menus/select_collection_en.json&amp;name=Alone&amp;url=worlds/tutorial_en/harvest1.json&amp;editor=python/harvest1_class_ex2.py">https://mde.tw/cp2025/reeborg?lang=en&amp;mode=python&amp;menu=worlds/menus/select_collection_en.json&amp;name=Alone&amp;url=worlds/tutorial_en/harvest1.json&amp;editor=python/harvest1_class_ex2.py </a> </p>
+<p>延伸到採收 harvest2 農田: <a href="https://mde.tw/cp2025/reeborg/?lang=en&amp;mode=python&amp;menu=worlds/menus/select_collection_en.json&amp;name=Alone&amp;url=worlds/tutorial_en/harvest2.json&amp;editor=python/harvest1_class_ex1.py">https://mde.tw/cp2025/reeborg/?lang=en&amp;mode=python&amp;menu=worlds/menus/select_collection_en.json&amp;name=Alone&amp;url=worlds/tutorial_en/harvest2.json&amp;editor=python/harvest1_class_ex1.py</a> </p>
+<p>但卻沒能套用到 harvest3 農田: <a href="https://mde.tw/cp2025/reeborg/?lang=en&amp;mode=python&amp;menu=worlds/menus/select_collection_en.json&amp;name=Alone&amp;url=worlds/tutorial_en/harvest3.json&amp;editor=python/harvest1_class_ex1.py">https://mde.tw/cp2025/reeborg/?lang=en&amp;mode=python&amp;menu=worlds/menus/select_collection_en.json&amp;name=Alone&amp;url=worlds/tutorial_en/harvest3.json&amp;editor=python/harvest1_class_ex1.py</a> </p>
+<p>而必須要在每一個座標點留下或放入一個紅蘿蔔: <a href="https://mde.tw/cp2025/reeborg/?lang=en&amp;mode=python&amp;menu=worlds/menus/select_collection_en.json&amp;name=Alone&amp;url=worlds/tutorial_en/harvest3.json&amp;editor=python/harvest1_class_ex3.py">https://mde.tw/cp2025/reeborg/?lang=en&amp;mode=python&amp;menu=worlds/menus/select_collection_en.json&amp;name=Alone&amp;url=worlds/tutorial_en/harvest3.json&amp;editor=python/harvest1_class_ex3.py </a> </p>
+<h2>Otto_ninja</h2>
+<p><a href="https://www.printables.com/model/231580-otto-ninja-starter-robot/files">https://www.printables.com/model/231580-otto-ninja-starter-robot/files</a> </p>
+<p><iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="allowfullscreen" frameborder="0" height="315" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/NDIwhuxQPN8?si=ED_FAObUkAVFT5L-" title="YouTube video player" width="560"></iframe></p>
+<h1>Brython</h1>
+<p><button id="add1to100">1 add to 100</button><button id="robot1">機器人巡邏</button><button id="free_walk">自由行</button></p>
+<!-- 導入 brython 程式庫 -->
+<p>
+<script src="/static/brython.js"></script>
+<script src="/static/brython_stdlib.js"></script>
+</p>
+<!-- 啟動 Brython -->
+<p>
+<script>
+window.onload=function(){
+brython({debug:1, pythonpath:['/static/','./../downloads/py/']});
+}
+</script>
+</p>
+<p><!-- 導入 FileSaver 與 filereader --></p>
+<p>
+<script src="/static/ace/FileSaver.min.js" type="text/javascript"></script>
+<script src="/static/ace/filereader.js" type="text/javascript"></script>
+</p>
+<p><!-- 導入 ace --></p>
+<p>
+<script src="/static/ace/ace.js" type="text/javascript"></script>
+<script src="/static/ace/ext-language_tools.js" type="text/javascript"></script>
+<script src="/static/ace/mode-python3.js" type="text/javascript"></script>
+<script src="/static/ace/snippets/python.js" type="text/javascript"></script>
+</p>
+<p><!-- 導入 gearUtils-0.9.js Cango 齒輪繪圖程式庫 -->
+<script src="/static/Cango-24v03-min.js"></script>
+<script src="/static/gearUtils-09.js"></script>
+<script src="/static/SVGpathUtils-6v03-min.js"></script>
+<script src="/static/sylvester.js"></script>
+<script src="/static/PrairieDraw.js"></script>
+</p>
+<p><!-- 請注意, 這裡使用 Javascript 將 localStorage["kw_py_src1"] 中存在近端瀏覽器的程式碼, 由使用者決定存檔名稱--></p>
+<p>
+<script type="text/javascript">
+function doSave(storage_id, filename){
+    var blob = new Blob([localStorage[storage_id]], {type: "text/plain;charset=utf-8"});
+    filename = document.getElementById(filename).value
+    saveAs(blob, filename+".py");
+}
+</script>
+</p>
+<p><!-- 累加程式開始 -->
+<script type="text/python3">
+from browser import document as doc
+import ace
+# 清除畫布
+def clear_bd1(ev):
+    bd = doc["brython_div1"]
+    bd.clear()
+Ace1 = ace.Editor(editor_id="kw_editor1", console_id="kw_console1", container_id="kw__container1", storage_id="kw_py_src1" )
+# 從 gist 取出程式碼後, 放入 editor 作為 default 程式
+def run1():
+    # 利用 get 取下 src 變數值
+    try:
+        url = doc.query["src"]
+    except:
+        url = "https://gist.githubusercontent.com/mdecourse/0229a8a017091476a79700b8a190f185/raw/c3a6deaf717f8f2739a4b1392a5ab10936e9693a/from_1_add_to_10_1.py"
+    prog = open(url).read()
+
+    # 將程式載入編輯區
+    Ace1.editor.setValue(prog)
+    Ace1.editor.scrollToRow(0)
+    Ace1.editor.gotoLine(0)
+    # 直接執行程式
+    #ns = {'__name__':'__main__'}
+    #exec(prog, ns)
+    # 按下 run 按鈕
+    Ace1.run()
+# 執行程式, 顯示輸出結果與清除輸出結果及對應按鈕綁定
+doc['kw_run1'].bind('click', Ace1.run)
+doc['kw_show_console1'].bind('click', Ace1.show_console)
+doc['kw_clear_console1'].bind('click', Ace1.clear_console)
+doc['clear_bd1'].bind('click', clear_bd1)
+# 呼叫函式執行
+run1()
+</script>
+<!-- 累加程式結束 --> <!-- 機器人巡邏程式開始 -->
+<script type="text/python3">
+from browser import document as doc
+import ace
+
+# 清除畫布
+def clear_bd1(ev):
+    bd = doc["brython_div1"]
+    bd.clear()
+
+# 利用 ace 中的 Editor 建立 Ace2 物件, 其中的輸入變數分別對應到頁面中的編輯區物件
+Ace2 = ace.Editor(editor_id="kw_editor1", console_id="kw_console1", container_id="kw__container1", storage_id="kw_py_src1" )
+
+robot1_url = "https://gist.githubusercontent.com/mdecycu/ec4bb35dd0769e7a83d2a9fa57878a67/raw/b33c5fc2a0774f8c5d2b0e8c7c7908e58d73bb94/robot_1.py"
+
+# 從 gist 取得程式碼
+robot1_src = open(robot1_url).read()
+def robot1(ev):
+    Ace2.editor.setValue(robot1_src)
+    Ace2.editor.scrollToRow(0)
+    Ace2.editor.gotoLine(0)
+    Ace2.run()
+
+# id 為 "robot1" 的按鈕點按時, 執行 robot1 方法
+doc["robot1"].bind('click', robot1)
+</script>
+<!-- 機器人巡邏程式結束 --></p>
+<!-- 機器人自由行程式開始 -->
+<p>
+<script type="text/python3">
+from browser import document as doc
+import ace
+
+# 清除畫布
+def clear_bd1(ev):
+    bd = doc["brython_div1"]
+    bd.clear()
+
+# 利用 ace 中的 Editor 建立 Ace2 物件, 其中的輸入變數分別對應到頁面中的編輯區物件
+Ace2 = ace.Editor(editor_id="kw_editor1", console_id="kw_console1", container_id="kw__container1", storage_id="kw_py_src1" )
+
+free_walk_url = "https://gist.githubusercontent.com/mdecycu/ec4bb35dd0769e7a83d2a9fa57878a67/raw/9d55811467e411eb89f74171d8a586ae9f1a96aa/brython_robot_free_walk.py"
+
+# 從 gist 取得程式碼
+free_walk_src = open(free_walk_url).read()
+def free_walk(ev):
+    Ace2.editor.setValue(free_walk_src)
+    Ace2.editor.scrollToRow(0)
+    Ace2.editor.gotoLine(0)
+    Ace2.run()
+
+# id 為 "free_walk" 的按鈕點按時, 執行 robot1 方法
+doc["free_walk"].bind('click', free_walk)
+</script>
+</p>
+<!-- 機器人自由行程式結束 -->
+<p><!-- add 1 to 100 開始 -->
+<script type="text/python3">
+from browser import document as doc
+import ace
+
+# 清除畫布
+def clear_bd1(ev):
+    bd = doc["brython_div1"]
+    bd.clear()
+
+# 利用 ace 中的 Editor 建立 Ace2 物件, 其中的輸入變數分別對應到頁面中的編輯區物件
+Ace2 = ace.Editor(editor_id="kw_editor1", console_id="kw_console1", container_id="kw__container1", storage_id="kw_py_src1" )
+
+add1to100_url = "https://gist.githubusercontent.com/mdecourse/0229a8a017091476a79700b8a190f185/raw/c48e37714f055c3a0027cbfef59e442a6ef659b9/from_1_add_to_100_1.py"
+
+# 從 gist 取得程式碼
+add_src = open(add1to100_url).read()
+def add(ev):
+    Ace2.editor.setValue(add_src)
+    Ace2.editor.scrollToRow(0)
+    Ace2.editor.gotoLine(0)
+    Ace2.run()
+
+# id 為 "add1to100" 的按鈕點按時, 執行 add 方法
+doc["add1to100"].bind('click', add)
+</script>
+</p>
+<p><!-- add 1 to 100 結束--></p>
+<!-- editor1 開始 -->
+<p><!-- 用來顯示程式碼的 editor 區域 --></p>
+<div id="kw_editor1" style="width: 600px; height: 300px;"></div>
+<p><!-- 以下的表單與按鈕與前面的 Javascript doSave 函式以及 FileSaver.min.js 互相配合 --></p>
+<p><!-- 存擋表單開始 --></p>
+<form><label>Filename: <input id="kw_filename" placeholder="input file name" type="text"/>.py</label> <input onclick="doSave('kw_py_src1', 'kw_filename1');" type="submit" value="Save"/></form>
+<p><!-- 存擋表單結束 --></p>
+<p></p>
+<p><!-- 執行與清除按鈕開始 --></p>
+<p><button id="kw_run1">Run</button> <button id="kw_show_console1">Output</button> <button id="kw_clear_console1">清除輸出區</button><button id="clear_bd1">清除繪圖區</button><button onclick="window.location.reload()">Reload</button></p>
+<p><!-- 執行與清除按鈕結束 --></p>
+<p></p>
+<p><!-- 程式執行 ouput 區 --></p>
+<div style="width: 100%; height: 100%;"><textarea autocomplete="off" id="kw_console1"></textarea></div>
+<p><!-- Brython 程式執行的結果, 都以 brython_div1 作為切入位置 --></p>
+<div id="brython_div1"></div>
+<!-- editor1 結束 --><hr/><!-- ########################################## -->
+<p>從 1 累加到 100 part2:</p>
+<p><button id="add1to100part2">1 add to 100</button><button id="cango_three_gears">cango_three_gears</button><button id="bsnake">BSnake</button><button id="aitetris">AI Tetris</button></p>
+<p><!-- 請注意, 這裡使用 Javascript 將 localStorage["kw_py_src2"] 中存在近端瀏覽器的程式碼, 由使用者決定存檔名稱--></p>
+<p>
+<script type="text/python3">
+from browser import document as doc
+import ace
+# 清除畫布
+def clear_bd2(ev):
+    bd = doc["brython_div2"]
+    bd.clear()
+Ace3 = ace.Editor(editor_id="kw_editor2", console_id="kw_console2", container_id="kw__container2", storage_id="kw_py_src2" )
+# 從 gist 取出程式碼後, 放入 editor 作為 default 程式
+def run2():
+    # 利用 get 取下 src 變數值
+    try:
+        url = doc.query["src2"]
+    except:
+        url = "https://gist.githubusercontent.com/mdecourse/0229a8a017091476a79700b8a190f185/raw/c3a6deaf717f8f2739a4b1392a5ab10936e9693a/from_1_add_to_10_1.py"
+    prog = open(url).read()
+
+    # 將程式載入編輯區
+    Ace3.editor.setValue(prog)
+    Ace3.editor.scrollToRow(0)
+    Ace3.editor.gotoLine(0)
+    # 直接執行程式
+    #ns = {'__name__':'__main__'}
+    #exec(prog, ns)
+    # 按下 run 按鈕
+    Ace3.run()
+
+# 執行程式, 顯示輸出結果與清除輸出結果及對應按鈕綁定
+doc['kw_run2'].bind('click', Ace3.run)
+doc['kw_show_console2'].bind('click', Ace3.show_console)
+doc['kw_clear_console2'].bind('click', Ace3.clear_console)
+doc['clear_bd2'].bind('click', clear_bd2)
+# 呼叫函式執行
+run2()
+</script>
+</p>
+<p><!-- add 1 to 100 part2 開始 -->
+<script type="text/python3">
+from browser import document as doc
+import ace
+
+# 清除畫布
+def clear_bd2(ev):
+    bd = doc["brython_div2"]
+    bd.clear()
+
+# 利用 ace 中的 Editor 建立 Ace2 物件, 其中的輸入變數分別對應到頁面中的編輯區物件
+Ace4 = ace.Editor(editor_id="kw_editor2", console_id="kw_console2", container_id="kw__container2", storage_id="kw_py_src2" )
+
+# 透過 Ace4 以類別建立一個通用的 button2, 可以在多個案例中將 gist 程導入編輯區
+
+class button2:
+    def __init__(self, url):
+        self.url = url
+
+    # 記得加入 event 輸入變數
+    def do(self,ev):
+        Ace4.editor.setValue(open(self.url).read())
+        Ace4.editor.scrollToRow(0)
+        Ace4.editor.gotoLine(0)
+        Ace4.run()
+
+add1to100_url = "https://gist.githubusercontent.com/mdecourse/0229a8a017091476a79700b8a190f185/raw/c48e37714f055c3a0027cbfef59e442a6ef659b9/from_1_add_to_100_1.py"
+
+# 從 gist 取得程式碼
+add_src = open(add1to100_url).read()
+def add2(ev):
+    Ace4.editor.setValue(add_src)
+    Ace4.editor.scrollToRow(0)
+    Ace4.editor.gotoLine(0)
+    Ace4.run()
+
+# id 為 "add1to100part2" 的按鈕點按時, 執行 add 方法
+doc["add1to100part2"].bind('click', add2)
+# 以下為運用 button2 class 的通用 gist 程式導入區
+################################## cango_three_gears start
+cango_three_gears_url = "https://gist.githubusercontent.com/mdecycu/d9082d678096bd58378d6afe2c7fa05d/raw/f7a85d737d6723d5e34c526d5daee990ed92c32b/cango_three_gears_brython_div2.py"
+cango_three_gears = button2(cango_three_gears_url)
+doc["cango_three_gears"].bind("click", cango_three_gears.do)
+################################## cango_three_gears end
+################################## bsnake start
+bsnake_url = "https://gist.githubusercontent.com/mdecycu/d9082d678096bd58378d6afe2c7fa05d/raw/f7a85d737d6723d5e34c526d5daee990ed92c32b/kmol_snakey.py"
+bsnake = button2(bsnake_url)
+doc["bsnake"].bind("click", bsnake.do)
+################################## bsnake end
+################################## aitetris start
+aitetris_url = "https://gist.githubusercontent.com/mdecycu/d9082d678096bd58378d6afe2c7fa05d/raw/f7a85d737d6723d5e34c526d5daee990ed92c32b/pygame_to_brython_tetris_ai.py"
+aitetris = button2(aitetris_url)
+doc["aitetris"].bind("click", aitetris.do)
+################################## aitetris end
+</script>
+</p>
+<p><!-- add 1 to 100 part2 結束--></p>
+<!-- editor2 開始 -->
+<p><!-- 用來顯示程式碼的 editor 區域 --></p>
+<div id="kw_editor2" style="width: 600px; height: 300px;"></div>
+<p><!-- 以下的表單與按鈕與前面的 Javascript doSave 函式以及 FileSaver.min.js 互相配合 --></p>
+<p><!-- 存擋表單開始 --></p>
+<form><label>Filename: <input id="kw_filename2" placeholder="input file name" type="text"/>.py</label> <input onclick="doSave('kw_py_src2', 'kw_filename2');" type="submit" value="Save"/></form>
+<p><!-- 存擋表單結束 --></p>
+<p></p>
+<p><!-- 執行與清除按鈕開始 --></p>
+<p><button id="kw_run2">Run</button> <button id="kw_show_console2">Output</button> <button id="kw_clear_console2">清除輸出區</button><button id="clear_bd2">清除繪圖區</button><button onclick="window.location.reload()">Reload</button></p>
+<p><!-- 執行與清除按鈕結束 --></p>
+<p></p>
+<p><!-- 程式執行 ouput 區 --></p>
+<div style="width: 100%; height: 100%;"><textarea autocomplete="off" id="kw_console2"></textarea></div>
+<p><!-- Brython 程式執行的結果, 都以 brython_div1 作為切入位置 --></p>
+<div id="brython_div2"></div>
+<!-- editor2 結束 --><hr/>
+<p></p>
+<h2>Brython_ex</h2>
+<p><a href="https://mde.tw/cp2025/content/Brython.html?src=https://gist.githubusercontent.com/mdecycu/ec4bb35dd0769e7a83d2a9fa57878a67/raw/9d55811467e411eb89f74171d8a586ae9f1a96aa/brython_robot_free_walk.py">機器人自由行</a></p>
+<p>Can we bring pythonpad into this page? <a href="https://pythonpad.github.io/docs/manual.html">https://pythonpad.github.io/docs/manual.html</a> </p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">from browser import document, html, timer
+ 
+canvas = html.CANVAS(width=400, height=400)
+brython_div = document["brython_div1"]
+brython_div &lt;= canvas
+ctx = canvas.getContext("2d")
+ 
+def draw_grid():
+    ctx.clearRect(0, 0, 400, 400)
+    ctx.strokeStyle = "#ccc"
+    ctx.lineWidth = 1
+    for i in range(0, 401, 40):
+        ctx.beginPath()
+        ctx.moveTo(i, 0)
+        ctx.lineTo(i, 400)
+        ctx.stroke()
+        ctx.beginPath()
+        ctx.moveTo(0, i)
+        ctx.lineTo(400, i)
+        ctx.stroke()
+    
+    # 畫出邊界
+    ctx.strokeStyle = "black"
+    ctx.lineWidth = 2
+    ctx.strokeRect(0, 0, 400, 400)
+
+def draw_robot(x, y):
+    draw_grid()
+    ctx.fillStyle = "blue"
+    ctx.beginPath()
+    ctx.arc(x * 40 + 20, y * 40 + 20, 15, 0, 6.28)
+    ctx.fill()
+
+x, y = 0, 0
+def move():
+    global x
+    x = (x + 1) % 10
+    draw_robot(x, y)
+
+draw_grid()
+timer.set_interval(move, 500)</pre>
+<p>以下程式, 按 j 隨箭頭方向前進, 按下 i 則左轉</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">from browser import document, html, bind
+
+canvas = html.CANVAS(width=400, height=400)
+brython_div = document["brython_div1"]
+brython_div &lt;= canvas
+ctx = canvas.getContext("2d")
+
+cols, rows = 10, 10
+cell = 40
+
+# 上、右、下、左
+directions = [(0, -1), (1, 0), (0, 1), (-1, 0)]
+
+robot = {
+    "x": 5,
+    "y": 5,
+    "dir": 0  # 初始朝向上
+}
+
+def draw_grid():
+    ctx.clearRect(0, 0, 400, 400)
+    ctx.strokeStyle = "#ccc"
+    ctx.lineWidth = 1
+    for i in range(0, 401, cell):
+        ctx.beginPath()
+        ctx.moveTo(i, 0)
+        ctx.lineTo(i, 400)
+        ctx.stroke()
+        ctx.beginPath()
+        ctx.moveTo(0, i)
+        ctx.lineTo(400, i)
+        ctx.stroke()
+    ctx.strokeStyle = "black"
+    ctx.lineWidth = 2
+    ctx.strokeRect(0, 0, 400, 400)
+
+def draw_robot():
+    draw_grid()
+    cx = robot["x"] * cell + cell // 2
+    cy = robot["y"] * cell + cell // 2
+    size = 15
+    d = robot["dir"]
+
+    ctx.fillStyle = "blue"
+    ctx.beginPath()
+    if d == 0:  # 上
+        ctx.moveTo(cx, cy - size)
+        ctx.lineTo(cx - size, cy + size)
+        ctx.lineTo(cx + size, cy + size)
+    elif d == 1:  # 右
+        ctx.moveTo(cx + size, cy)
+        ctx.lineTo(cx - size, cy - size)
+        ctx.lineTo(cx - size, cy + size)
+    elif d == 2:  # 下
+        ctx.moveTo(cx, cy + size)
+        ctx.lineTo(cx - size, cy - size)
+        ctx.lineTo(cx + size, cy - size)
+    elif d == 3:  # 左
+        ctx.moveTo(cx - size, cy)
+        ctx.lineTo(cx + size, cy - size)
+        ctx.lineTo(cx + size, cy + size)
+    ctx.closePath()
+    ctx.fill()
+
+@bind(document, "keydown")
+def on_key(e):
+    key = e.key.lower()
+    if key == "i":
+        robot["dir"] = (robot["dir"] - 1) % 4  # 左轉
+    elif key == "j":
+        dx, dy = directions[robot["dir"]]
+        nx = robot["x"] + dx
+        ny = robot["y"] + dy
+        if 0 &lt;= nx &lt; cols and 0 &lt;= ny &lt; rows:
+            robot["x"] = nx
+            robot["y"] = ny
+    draw_robot()
+
+draw_robot()</pre>
+<p>Optimization:</p>
+<p>題目:<br/>一位製造商想設計一個開口式的盒子，其底部為長方形，寬為 x、長為 y，且總表面積為 80 平方公分。 請問要使盒子的體積達到最大，應該選用哪些尺寸？</p>
+<p>直接利用 Python 以 <a href="https://en.wikipedia.org/wiki/Differential_evolution">Differential Evoluation</a> 運算: <a href="/downloads/de_volume_max.py">de_volume_max.py</a></p>
+<p style="padding-left: 30px;">參考: </p>
+<p style="padding-left: 60px;"><a href="/downloads/de_volume_max.c">de_volume_max.c</a>, <a href="/downloads/de_volume_max.v">de_volume_max.v</a></p>
+<p>也可以採網頁前端使用 Brython，後端採 Python 執行運算後將資料傳回網頁: <a href="/downloads/brython_w_flask.7z">brython_w_flask.7z</a></p>
+<h1>Pyodide</h1>
+<p>
+<script src="https://cdn.jsdelivr.net/pyodide/v0.26.4/full/pyodide.js"></script>
+</p>
+<p><button id="version">version</button> <button id="hello_button">hello</button> <button id="add1to100">1 add to 100</button> <button id="robot1">機器人巡邏</button><button id="free_walk">自由行</button> <button id="numpy_ode">numpy_ode</button></p>
+<!-- Ace Editor Scripts -->
+<p>
+<script src="/static/ace/FileSaver.min.js"></script>
+<script src="/static/ace/filereader.js"></script>
+<script src="/static/ace/ace.js"></script>
+<script src="/static/ace/ext-language_tools.js"></script>
+<script src="/static/ace/mode-python.js"></script>
+<script src="/static/ace/snippets/python.js"></script>
+</p>
+<!-- Editor 1 -->
+<div id="kw_editor1" style="width: 600px; height: 300px;"></div>
+<p><button id="kw_run1">Run</button> <button id="kw_output1">Output</button> <button id="kw_clear_console1">清除輸出區</button> <button onclick="location.reload()">Reload</button></p>
+<p><textarea id="kw_console1"></textarea></p>
+<div id="pyodide_div1"></div>
+<div id="mpl_output1"></div>
+<div id="brython_div1"></div>
+<hr/>
+<p>從 1 累加到 100 part2:</p>
+<p><button id="add1to100part2">1 add to 100</button></p>
+<!-- Editor 2 -->
+<div id="kw_editor2" style="width: 600px; height: 300px;"></div>
+<p><button id="kw_run2">Run</button> <button id="kw_output2">Output</button> <button id="kw_clear_console2">清除輸出區</button> <button onclick="location.reload()">Reload</button></p>
+<p><textarea id="kw_console2"></textarea></p>
+<div id="pyodide_div2"></div>
+<div id="mpl_output2"></div>
+<div id="brython_div2"></div>
+<p>
+<script>
+function getUrlParam(key) {
+  return new URLSearchParams(window.location.search).get(key);
+}
+function updateUrlParam(key, value) {
+  const url = new URL(window.location);
+  url.searchParams.set(key, value);
+  window.history.replaceState({}, "", url);
+}
+
+let pyodide, editor1, editor2;
+
+document.addEventListener("DOMContentLoaded", async () => {
+  editor1 = ace.edit("kw_editor1");
+  editor1.setTheme("ace/theme/chrome");
+  editor1.session.setMode("ace/mode/python");
+
+  editor2 = ace.edit("kw_editor2");
+  editor2.setTheme("ace/theme/chrome");
+  editor2.session.setMode("ace/mode/python");
+
+  pyodide = await loadPyodide();
+  await pyodide.loadPackage(["numpy", "scipy", "matplotlib", "micropip"]);
+
+  // 定義 hello() 模組
+  const code = `
+def hello():
+    print("Hello from custom module!")
+`;
+  pyodide.runPython(code);
+
+  const GIST_ADD1TO100 =
+    "https://gist.githubusercontent.com/mdecourse/0229a8a017091476a79700b8a190f185/raw/" +
+    "c48e37714f055c3a0027cbfef59e442a6ef659b9/from_1_add_to_100_1.py";
+  const NUMPY_ODE =
+    "https://gist.githubusercontent.com/mdecycu/ec4bb35dd0769e7a83d2a9fa57878a67/raw/" +
+    "98d582539545b3c9fbfa35dd3e605c506367618e/pyodide_ode_ex1.py";
+  const PYODIDE_ROBOT_ANIMATION =
+    "https://gist.githubusercontent.com/mdecycu/ec4bb35dd0769e7a83d2a9fa57878a67/raw/" +
+    "f3d75d08f2b90f4470342e91ee1e5c36b5f950bf/pyodide_robot_ex1.py";
+  const FREE_WALK = 
+    "https://gist.githubusercontent.com/mdecycu/ec4bb35dd0769e7a83d2a9fa57878a67/raw/" + "d1659628afe5d36a026ef305dc639f6be4c9f608/pyodide_robot_ex3.py"
+
+  const src = getUrlParam("src");
+  if (src === PYODIDE_ROBOT_ANIMATION) {
+    const robotCode = await fetchCode(PYODIDE_ROBOT_ANIMATION);
+    editor1.setValue(robotCode, -1);
+    updateUrlParam("src", PYODIDE_ROBOT_ANIMATION);
+    runPyodide(editor1, "kw_console1", "brython_div1");
+  } else {
+    const initialCode = await fetchCode(src || GIST_ADD1TO100);
+    editor1.setValue(initialCode, -1);
+    runPyodide(editor1, "kw_console1", "brython_div1");
+  }
+
+  editor2.setValue("", -1);
+
+  document.getElementById("version").onclick = () => {
+    const vcode = `
+import pyodide
+import sys
+import matplotlib
+import numpy
+import scipy
+print("Pyodide version:", pyodide.__version__)
+print("Python version :", sys.version)
+print("matplotlib version:", matplotlib.__version__)
+print("numpy version:", numpy.__version__)
+print("scipy version:", scipy.__version__)
+`;
+    editor1.setValue(vcode, -1);
+    updateUrlParam("src", "inline_version");
+    runPyodide(editor1, "kw_console1", "brython_div1");
+  };
+
+  document.getElementById("hello_button").onclick = () => {
+    editor1.setValue("hello()", -1);
+    updateUrlParam("src", "inline_hello");
+    runPyodide(editor1, "kw_console1", "brython_div1");
+  };
+
+  document.getElementById("add1to100").onclick = async () => {
+    const c = await fetchCode(GIST_ADD1TO100);
+    editor1.setValue(c, -1);
+    updateUrlParam("src", GIST_ADD1TO100);
+    runPyodide(editor1, "kw_console1", "brython_div1");
+  };
+
+  document.getElementById("numpy_ode").onclick = async () => {
+    const c = await fetchCode(NUMPY_ODE);
+    editor1.setValue(c, -1);
+    updateUrlParam("src", NUMPY_ODE);
+    runPyodide(editor1, "kw_console1", "brython_div1");
+  };
+
+  document.getElementById("robot1").onclick = async () => {
+    const rc = await fetchCode(PYODIDE_ROBOT_ANIMATION);
+    editor1.setValue(rc, -1);
+    updateUrlParam("src", PYODIDE_ROBOT_ANIMATION);
+    runPyodide(editor1, "kw_console1", "brython_div1");
+  };
+
+  document.getElementById("free_walk").onclick = async () => {
+    const rc = await fetchCode(FREE_WALK);
+    editor1.setValue(rc, -1);
+    updateUrlParam("src", FREE_WALK);
+    runPyodide(editor1, "kw_console1", "brython_div1");
+  };
+
+  document.getElementById("add1to100part2").onclick = async () => {
+    const c = await fetchCode(GIST_ADD1TO100);
+    editor2.setValue(c, -1);
+    runPyodide(editor2, "kw_console2", "brython_div2");
+  };
+
+  document.getElementById("kw_run1").onclick = () =>
+    runPyodide(editor1, "kw_console1", "brython_div1");
+  document.getElementById("kw_run2").onclick = () =>
+    runPyodide(editor2, "kw_console2", "brython_div2");
+  document.getElementById("kw_clear_console1").onclick = () =>
+    clearOutput("kw_console1", "brython_div1");
+  document.getElementById("kw_clear_console2").onclick = () =>
+    clearOutput("kw_console2", "brython_div2");
+});
+
+// 處理兩個 Output 列數
+  document.getElementById("kw_output1").onclick = () => {
+    const ta = document.getElementById("kw_console1");
+    ta.rows = "15";
+    ta.cols = "70";
+    ta.scrollTop = 0;
+  };
+  document.getElementById("kw_output2").onclick = () => {
+    const ta = document.getElementById("kw_console2");
+    ta.rows = "15";
+    ta.cols = "70";
+    ta.scrollTop = 0;
+  };
+
+async function fetchCode(url) {
+  const r = await fetch(url);
+  if (!r.ok) throw new Error(`載入失敗 ${r.status}`);
+  return await r.text();
+}
+
+function clearOutput(consoleId, divId) {
+  document.getElementById(consoleId).value = "";
+  document.getElementById(divId).innerHTML = "";
+}
+
+async function runPyodide(editor, consoleId, divId) {
+  document.getElementById(consoleId).value = "";
+  document.getElementById(divId).innerHTML = "";
+
+  await pyodide.runPythonAsync(`
+import sys
+class JsWriter:
+  def write(self, s):
+    from js import document
+    ta = document.getElementById("${consoleId}")
+    ta.value += s
+    ta.scrollTop = ta.scrollHeight
+sys.stdout = JsWriter()
+sys.stderr = JsWriter()
+`);
+
+  try {
+    await pyodide.runPythonAsync(editor.getValue());
+  } catch (e) {
+    document.getElementById(consoleId).value += "\n錯誤：" + e.toString();
+  }
+}
+</script>
+</p>
+<h2>Pyodide_ex</h2>
+<p><a href="https://mde.tw/cp2025/content/Pyodide.html?src=https://gist.githubusercontent.com/mdecycu/ec4bb35dd0769e7a83d2a9fa57878a67/raw/f3d75d08f2b90f4470342e91ee1e5c36b5f950bf/pyodide_robot_ex1.py">Pyodide 機器人巡邏</a></p>
+<p>Pyodide 導入客製化模組:</p>
+<pre class="brush:js;auto-links:false;toolbar:false" contenteditable="false">const code = `
+# 定義一個模組內容
+def hello():
+    print("Hello from custom module!")
+`;
+pyodide.runPython(code);
+</pre>
+<p><a href="https://mde.tw/cp2025/content/Pyodide.html?src=https://gist.githubusercontent.com/mdecycu/ec4bb35dd0769e7a83d2a9fa57878a67/raw/3ed6869dcd7312254513ca507de17945e15a9b6f/box_max_volume_short.py">Volume_max_pyodide_de_short.py</a></p>
+<p><a href="https://mde.tw/cp2025/content/Pyodide.html?src=https://gist.githubusercontent.com/mdecycu/ec4bb35dd0769e7a83d2a9fa57878a67/raw/3ed6869dcd7312254513ca507de17945e15a9b6f/box_volume_max_pyodide_de.py">Volume_max_pyodide_de.py</a></p>
+<p></p>
