@@ -2,7 +2,7 @@
         <head>
         <title>cp2025_hw</title>
         <meta charset="utf-8">
-<meta property="head" content="H2">
+<meta property="head" content="H3">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <link rel="stylesheet" href="./../cmsimde/static/chimper/fonts/icomoon/style.css">
         <link rel="stylesheet" href="./../cmsimde/static/chimper/css/bootstrap.min.css">
@@ -142,11 +142,29 @@ img.add_border {
           </div>
           
         </header>
-    <div id="tipue_search_content">HW3 << <a href='HW3.html'>Previous</a> <a href='Brython.html'>Next</a> >> Brython<br /><h1>HW4</h1>
-<p>請修改 <a href="https://mde.tw/cp2025/content/Brython.html?src=https://gist.githubusercontent.com/mdecycu/58fed8bd2f5be98a6456a8dcae512011/raw/4019adba4ee4be19c35982d835bad8e7d83a7b2f/brython_robot4_ex1.py">brython_robot4_ex1.py</a> 程式，讓機器人可以與<a href="https://mde.tw/cp2025/reeborg/?lang=en&amp;mode=python&amp;menu=worlds%2Fmenus%2Fselect_collection_en.json&amp;name=Alone&amp;url=worlds%2Ftutorial_en%2Fharvest3.json&amp;editor=python%2Fharvest1_class_ex3.py">機器人收割程式</a>的採收與播種方式相同。</p>
-<p>請修改 Pyodide <a href="https://mde.tw/cp2025/content/Pyodide.html?src=https://gist.githubusercontent.com/mdecycu/ec4bb35dd0769e7a83d2a9fa57878a67/raw/d1659628afe5d36a026ef305dc639f6be4c9f608/pyodide_robot_ex3.py">機器人自由行</a>程式，讓機器人可以採水平巡邏方式，走過每一個區域。</p>
-<p>請修改 Pyodide <a href="https://mde.tw/cp2025/content/Pyodide2.html?src=https%3A%2F%2Fgist.githubusercontent.com%2Fmdecycu%2Fec4bb35dd0769e7a83d2a9fa57878a67%2Fraw%2Fff833d14181c7e270d37432aa8589f5ecf00e383%2Fpyodide_walk_around2.py">機器人自由行2</a>程式，讓機器人可以採上下垂直巡邏方式，走過每一個區域。</p>
-<br />HW3 << <a href='HW3.html'>Previous</a> <a href='Brython.html'>Next</a> >> Brython</div>
+    <div id="tipue_search_content">robot.py << <a href='robot.py.html'>Previous</a> <a href='Pyodide3.html'>Next</a> >> Pyodide3<br /><h1>Example2</h1>
+<p>自行定義機器人右轉的非同步執行函式:</p>
+<p><a href="https://mde.tw/cp2025/content/Pyodide2.html?src=https://gist.githubusercontent.com/mdecycu/ec4bb35dd0769e7a83d2a9fa57878a67/raw/8ac3ce859d6aec327b7859e091168270d6a951f7/pyodide2_turn_right.py">執行 turn_right 程式</a>範例。</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">import robot
+import asyncio
+
+# 定義右轉的非同步函式
+async def turn_right(bot):
+    for _ in range(3):
+        await bot.turn_left()
+
+async def main():
+    world, bot = await robot.init(10, 10, 1, 1)
+    print("機器人開始行動")
+    await bot.turn_left()
+    await bot.walk(9)
+    await turn_right(bot) 
+    print("機器人完成行動")
+
+# main() 讓出執行控制權，由頁面中的 even loop 決定何時執行 main()
+await main()
+</pre>
+<br />robot.py << <a href='robot.py.html'>Previous</a> <a href='Pyodide3.html'>Next</a> >> Pyodide3</div>
         
     <!-- footer -->
       <div class="container">
